@@ -1,9 +1,10 @@
 class SearchesController < ApplicationController
   before_action :load_searches, only: [:index, :new, :create]
-  before_action :load_results, only: [:index, :new, :create]
+  before_action :load_results, only: [:new]
   before_action :create_or_update, only: [:create, :update]
 
   def index
+    redirect_to root_path
   end
 
   def new
@@ -14,7 +15,6 @@ class SearchesController < ApplicationController
     else
       @search = Search.new
     end
-
   end
 
   def create

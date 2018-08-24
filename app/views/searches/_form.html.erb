@@ -8,7 +8,7 @@
 <div>
   <% if @results.present? %>
     <% @results.each do |result| %>
-      <%= image_tag result %>
+      <p><%= image_tag result %></p>
     <% end %>
   <% else %>
     <p>No results found.</p>
