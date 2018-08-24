@@ -37,12 +37,8 @@ class SearchesController < ApplicationController
     end
   end
 
-  def search_params
-    params.permit(:query)
-  end
-
   def create_or_update
-    @search = Search.where(query: search_params[:query].downcase).first_or_initialize
+    @search = Search.where(query: params[:search][:query].downcase).first_or_initialize
     redirect_to new_search_path(query: @search.query)
   end
 end

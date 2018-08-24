@@ -30,7 +30,7 @@ RSpec.describe SearchesController, :type => :controller do
     it "redirects you to the root path" do
       search = Search.new(query: "apollo 11")
       search.save
-      post :create, params: { query: "apollo 11" }
+      post :create, params: { search: {query: "apollo 11"} }
       VCR.use_cassette("apollo 11 search") do
         get :new, params: {:query => "apollo 11"}
         expect(assigns(:searches)).to eq([search])
