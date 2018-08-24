@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   before_action :load_searches, only: [:index, :new, :create]
   before_action :load_results, only: [:new]
-  before_action :create_or_update, only: [:create, :update]
+  before_action :create_or_update, only: [:create, :update, :show]
 
   def index
     redirect_to root_path
