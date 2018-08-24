@@ -1,0 +1,8 @@
+<%= content_for :head do %>
+  <%= javascript_include_tag "jquery.tablesorter.min.js", "data-turbolinks-track" => true %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#sortable").tablesorter( { sortList: [[0,0]] } );
+    });
+  </script>
+<% end %> 

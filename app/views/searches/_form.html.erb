@@ -1,0 +1,18 @@
+<%= form_for @search do |f| %>
+  <%= f.text_field :query %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<br />
+
+<div>
+  <% if @results.present? %>
+    <% @results.each do |result| %>
+      <%= image_tag result %>
+    <% end %>
+  <% else %>
+    <p>No results found.</p>
+  <% end %>
+</div>
+
+<%= render partial: "form_js" %> 

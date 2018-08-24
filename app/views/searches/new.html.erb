@@ -1,0 +1,32 @@
+<h3>Search for images provided by nasa.gov</h3>
+<br />
+
+<div class="row">
+  <div class="col-3">
+    <b>Previous Searches (click heading to sort columns)</b>
+    <% if @searches.present? %>
+      <table class="table" id="sortable">
+        <thead>
+          <tr>
+            <th scope="col">search</th>
+            <th scope="col">hits</th>
+            <th scope="col">last searched</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @searches.each do |search| %>
+            <tr>
+              <td> <%= link_to search.query, new_search_path(query: search.query) %></td>
+              <td><%= search.count %></td>
+              <td><%= search.updated_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+
+  <div class="col-6">
+    <%= render partial: "form" %>
+  </div>
+</div>

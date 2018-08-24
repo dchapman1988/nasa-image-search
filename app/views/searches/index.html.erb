@@ -1,0 +1,14 @@
+<h3>Search for images provided by nasa.gov</h3>
+
+<div class="row">
+  <div class="col-3">
+    <b>Previous Searches</b>
+    <% @searches.each do |search| %>
+      <p><%= link_to search.name, create_search_path %></p>
+    <% end %>
+  </div>
+
+  <div class="col-6">
+    <%= render partial: "form" %>
+  </div>
+</div>
