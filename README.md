@@ -11,7 +11,7 @@ Setup the database:
 
     rake db:create db:migrate db:test:prepare
 
-Run the test:
+Run the tests:
 
     rspec
 
