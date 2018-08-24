@@ -39,11 +39,13 @@
 
   <div class="col-sm">
     Times searched: <%= @search.count %>
-    <ul>
-      <% @search_records.each do |record| %>
-        <li><%= record.created_at %></li>
-      <% end %>
-    </ul>
+    <% if @search_records.present? %>
+      <ul>
+        <% @search_records.each do |record| %>
+          <li><%= record.created_at %></li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 
 </div>
