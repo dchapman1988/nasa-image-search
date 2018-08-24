@@ -1,24 +1,27 @@
-# README
+# NASA Image Search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Development:
 
-Things you may want to cover:
+Install them gems:
 
-* Ruby version
+    gem install bundler
+    bundle
 
-* System dependencies
+Setup the database:
 
-* Configuration
+    rake db:create db:migrate db:test:prepare
 
-* Database creation
+Run the test:
 
-* Database initialization
+    rspec
 
-* How to run the test suite
+Check the coverage:
 
-* Services (job queues, cache servers, search engines, etc.)
+    gnome-open coverage/index.html
 
-* Deployment instructions
+(or what ever the MacOS equivalent is, if you're into that sort of thing)
 
-* ...
+Awesome music with your tests:
+
+    sudo apt-get install mpg321
+    rspec -f NyanCatMusicFormatter
