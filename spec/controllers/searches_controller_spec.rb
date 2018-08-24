@@ -26,7 +26,7 @@ RSpec.describe SearchesController, :type => :controller do
     end
   end
 
-  describe "POST index" do
+  describe "POST create" do
     it "redirects you to the root path" do
       search = Search.new(query: "apollo 11")
       search.save
