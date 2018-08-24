@@ -11,6 +11,8 @@ class SearchesController < ApplicationController
     if params[:query].present?
       @search = Search.where(query: params[:query].downcase).first_or_initialize
       @search.save
+      @search_record = SearchRecord.create(search_id: @search.id)
+      @search_records = SearchRecord.where(search_id: @search.id)
       @results = load_results(@search.query)
     else
       @search = Search.new

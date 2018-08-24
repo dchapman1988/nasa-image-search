@@ -5,14 +5,3 @@
 
 <br />
 
-<div>
-  <% if @results.present? %>
-    <% @results.each do |result| %>
-      <p><%= image_tag result %></p>
-    <% end %>
-  <% else %>
-    <p>No results found.</p>
-  <% end %>
-</div>
-
-<%= render partial: "form_js" %> 

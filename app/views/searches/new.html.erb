@@ -2,7 +2,7 @@
 <br />
 
 <div class="row">
-  <div class="col-3">
+  <div class="col-sm">
     <b>Previous Searches (click heading to sort columns)</b>
     <% if @searches.present? %>
       <table class="table" id="sortable">
@@ -18,7 +18,7 @@
             <tr>
               <td> <%= link_to search.query, new_search_path(query: search.query) %></td>
               <td><%= search.count %></td>
-              <td><%= search.updated_at %></td>
+              <td><%= search.search_records.last.updated_at %></td>
             </tr>
           <% end %>
         </tbody>
@@ -26,7 +26,26 @@
     <% end %>
   </div>
 
-  <div class="col-6">
+  <div class="col-sm">
     <%= render partial: "form" %>
+    <% if @results.present? %>
+      <% @results.each do |result| %>
+        <p><%= image_tag result, class: "nasa-img"%></p>
+      <% end %>
+    <% else %>
+      <p>No results found.</p>
+    <% end %>
   </div>
+
+  <div class="col-sm">
+    Times searched: <%= @search.count %>
+    <ul>
+      <% @search_records.each do |record| %>
+        <li><%= record.created_at %></li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
+
+<%= render partial: "new_js" %> 
